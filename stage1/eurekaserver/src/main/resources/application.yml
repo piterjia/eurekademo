@@ -1,0 +1,24 @@
+spring:
+  application:
+    #服务名称
+    name: eureka-server
+server:
+  #服务注册中心端口号
+  port: 10000
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #是否向服务注册中心注册自己
+    registerWithEureka: false
+    #是否检索服务
+    fetchRegistry: false
+    #服务注册中心的配置内容，指定服务注册中心位置
+    #注册中心路径，如果有多个eureka server，在这里需要配置其他eureka server的地址，用","进行区分，如"http://address:8888/eureka,http://address:8887/eureka"
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    #开启注册中心的保护机制，默认是开启
+    enable-self-preservation: true
+    #设置保护机制的阈值，默认是0.85。
+    renewal-percent-threshold: 0.8
