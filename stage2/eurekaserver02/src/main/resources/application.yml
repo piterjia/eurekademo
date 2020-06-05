@@ -1,13 +1,13 @@
 spring:
   application:
     #服务名称
-    name: eureka-server-01
+    name: eureka-server-02
 server:
   #服务注册中心端口号
-  port: 20000
+  port: 20001
 eureka:
   instance:
-    hostname: eureka01
+    hostname: eureka02
   client:
     #是否向服务注册中心注册自己
     registerWithEureka: false
@@ -17,6 +17,7 @@ eureka:
     #注册中心路径，如果有多个eureka server，在这里需要配置其他eureka server的地址，用","进行区分，如"http://address:8888/eureka,http://address:8887/eureka"
     serviceUrl:
       defaultZone: http://eureka01:20000/eureka/,http://eureka02:20001/eureka/,http://eureka03:20002/eureka/
+      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
     #开启注册中心的保护机制，默认是开启
     enable-self-preservation: true

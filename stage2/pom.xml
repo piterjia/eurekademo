@@ -12,6 +12,8 @@
         <module>eurekaconsumer</module>
         <module>eurekaprovider</module>
         <module>eurekaserver</module>
+        <module>eurekaserver02</module>
+        <module>eurekaserver03</module>
     </modules>
 
 
